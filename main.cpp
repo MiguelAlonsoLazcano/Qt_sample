@@ -20,7 +20,11 @@ void sample_using_qstring(){
 }
 
 int main(int argc, char *argv[]) {
-    std::cout << "Qt5 version: " << QT_VERSION_STR << std::endl;
+    std::cout << "\tQt5 version: " << QT_VERSION_STR << std::endl;
+
+    /*
+     * @brief QTextStream & QString basics
+     * */
     sample_using_qstring();
 
     /*
