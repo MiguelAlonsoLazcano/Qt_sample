@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QTextStream>
+#include <QMainWindow>
 #include <QString>
 #include <iostream>
 
@@ -18,10 +19,19 @@ void sample_using_qstring(){
     out << a.toLower() << endl;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     std::cout << "Qt5 version: " << QT_VERSION_STR << std::endl;
-
     sample_using_qstring();
 
-    return 0;
+    /*
+     * @brief Must construct a QApplication before using a QWidget
+     * */
+    QApplication a(argc,argv);
+    QMainWindow window;
+
+    window.resize(250,150);
+    window.setWindowTitle("Simple window");
+    window.show();
+
+    return a.exec();
 }
